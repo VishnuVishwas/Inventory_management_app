@@ -4,11 +4,12 @@ from flask import Flask, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
+from secret import SECRET_KEY, SQLALCHEMY_DATABASE_URI
 
 # flask app instance
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'c4e53ee2876e8fed39373a33a80bd15a'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
+app.config['SECRET_KEY'] = SECRET_KEY
+app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 
 # instance to use hash
 bcrypt = Bcrypt(app)

@@ -4,15 +4,10 @@ from flask import Flask, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_bcrypt import Bcrypt
-from dotenv import load_dotenv
-import os
-
-# Load environment variables
-load_dotenv()
 
 # flask app instance
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SECRET_KEY'] = 'c4e53ee2876e8fed39373a33a80bd15a'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 
 # instance to use hash
@@ -36,7 +31,7 @@ def load_user(user_id):
     user = SignupUser.query.get(int(user_id))
     if user:
         return user
-
+    
     admin = Admin.query.get(int(user_id))
     if admin:
         return admin

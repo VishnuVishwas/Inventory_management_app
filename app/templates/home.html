@@ -1,0 +1,23 @@
+<!-- app/templates/home.html -->
+
+{% extends 'base.html' %}
+
+{% block home %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="jumbotron">
+                    <h1 class="display-4">Welcome to Inventory Management</h1>
+                    <p class="lead">This application allows you to store your products and manage them.</p>
+                    <hr class="my-4">
+                    <h2>Get Started</h2>
+                    <p class="lead">Users need to sign up or log in to access the application's features, use the links below to signup or login.</p>
+                    <p class="lead">
+                        <a class="btn btn-primary btn-lg" href="/signup-user" role="button">Sign Up</a>
+                        <a class="btn btn-secondary btn-lg" href="/login-user" role="button">Log In</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock home%}

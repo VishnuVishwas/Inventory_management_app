@@ -1,0 +1,48 @@
+<!-- app/templates/admin/view_users.html -->
+
+{% extends 'base.html' %}
+
+{% block view_users %}
+    <div class="container">
+        <h1 class="mt-4 mb-4">All Users</h1>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                        <tr>
+                            <td>{{ user.id }}</td>
+                            <td>{{ user.username }}</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ "Blocked" if user.blocked else "Active" }}</td>
+                            <td>
+                                {% if user.blocked %}
+                                    <form action="{{ url_for('unblock_user', user_id=user.id) }}" method="POST">
+                                        <button type="submit" class="btn btn-sm btn-success">Unblock</button>
+                                    </form>
+                                {% else %}
+                                    <form action="{{ url_for('block_user', user_id=user.id) }}" method="POST">
+                                        <button type="submit" class="btn btn-sm btn-success">Block</button>
+                                    </form>
+                                {% endif %}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Button to navigate to products page -->
+    <div class="container mt-4">
+        <a href="/products-page" class="btn btn-primary">Go to Products Page</a>
+    </div>
+{% endblock %}

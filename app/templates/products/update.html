@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Product</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Update Product</h1>
+        <form id="updateProductForm" action="/products/{{ product.id }}" method="POST">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" name="name" class="form-control" id="productName" value="{{ product.name }}" placeholder="Enter product name">
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Price</label>
+                <input type="text" name="price" class="form-control" id="productPrice" value="{{ product.price }}" placeholder="Enter price">
+            </div>
+            <div class="form-group">
+                <label for="productCategory">Category</label>
+                <select name="category" class="form-control" id="productCategory">
+                    <option value="Category 1" {% if product.category == "Category 1" %} selected {% endif %}>Category 1</option>
+                    <option value="Category 2" {% if product.category == "Category 2" %} selected {% endif %}>Category 2</option>
+                    <option value="Category 3" {% if product.category == "Category 3" %} selected {% endif %}>Category 3</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Product</button>
+        </form>
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,31 +1,19 @@
 # Inventory Management System
 
-## Overview
+### Description
+Inventory Management System allows user to manage the products for with CRUD options implemented and admin to block and view the products.
 
-This is an Inventory Management System built using Python, Flask, SQLAlchemy, HTML, CSS, and Bootstrap. The system allows administrators to manage products, view inventory, and manage users. The project is structured to separate concerns and make the codebase more maintainable.
+Implemented JWT authentication, password hashing, and database
+integration for security.
+Enabled CRUD operations for seamless inventory management.
+Designed functionalities for administrators to manage users effectively,
+including signup/login.
+Created a responsive user interface using Bootstrap for optimal usability
+across devices.
 
-## Features
 
-- **Admin Dashboard:** Manage products, inventory, and users.
-- **User Authentication:** Secure login and user management.
-- **Product Management:** Add, edit, delete, and view products.
-- **Inventory Tracking:** Keep track of product quantities and restock alerts.
-- **Responsive Design:** User-friendly interface with Bootstrap.
+### Technologies Used
+- Python, Flask, SQLAlchemy, HTML, CSS and Bootstrap, Jinja template
 
-## Project Structure
-
-```plaintext
-inventory_management_system/
-├── app/
-│   ├── admin/                # Admin-related routes and views
-│   ├── products/             # Product-related routes and views
-│   ├── templates/            # HTML templates
-│   │   ├── admin/            # Admin-specific templates
-│   │   ├── products/         # Product-specific templates
-│   │   └── user/             # User-specific templates
-│   ├── users/                # User-related routes and views
-├── instance/                 # Application instance folder
-├── static/                   # Static files (CSS, JS, images)
-├── README.md                 # Project documentation
-├── app.py                    # Main application file
-```
+### Demo
+[Watch the Inventory Management Demo](demo\Inventory_Management_Demo.mp4)

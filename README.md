@@ -15,9 +15,3 @@ across devices.
 ### Technologies Used
 - Python, Flask, SQLAlchemy, HTML, CSS and Bootstrap, Jinja template
 
-### Demo
-<p align="center">
-  <video src="./demo/Inventory_Management_Demo.mp4" controls="controls" style="max-width: 100%; height: auto;">
-    Your browser does not support the video tag.
-  </video>
-</p>
